@@ -14,4 +14,12 @@ public class Car {
             throw new IllegalArgumentException("자동차의 이름은 1글자 이상, 5글자 이하가 되어야 합니다.");
         }
     }
+
+    public String getName(){
+        return this.name;
+    }
+
+    public int getDistance(){
+        return this.distance;
+    }
 }

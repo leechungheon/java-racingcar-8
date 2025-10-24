@@ -15,12 +15,14 @@ public class Application {
         this.inputView = inputView;
         this.carService = carService;
     }
+
     public void run(){
         outputView.requestCarNames();
         List<Car> carList = carService.createCar(inputView.readCarNames());
         outputView.requestTryNumber();
         inputView.readTryNumber();
     }
+
     public static void main(String[] args) {
         OutputView outputView = new OutputView();
         InputView inputView = new InputView();
