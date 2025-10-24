@@ -22,4 +22,7 @@ public class Car {
     public int getDistance(){
         return this.distance;
     }
+    public void increaseDistance(){
+        this.distance++;
+    }
 }
