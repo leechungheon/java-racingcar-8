@@ -7,6 +7,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import racingcar.model.Car;
 import racingcar.model.CarService;
+import racingcar.model.Cars;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -23,13 +24,14 @@ class CarServiceTest {
         String inputNames = "pobi,woni,jun";
 
         // when: CarService를 통해 Car 객체 리스트 생성
-        List<Car> cars = carService.createCar(inputNames);
+        Cars cars = carService.createCar(inputNames);
 
         // then: 리스트의 크기와 각 Car 객체의 이름이 정확한지 검증
-        assertThat(cars).hasSize(3);
-        //assertThat(cars.get(0).getName()).isEqualTo("pobi");
-        //assertThat(cars.get(1).getName()).isEqualTo("woni");
-        //assertThat(cars.get(2).getName()).isEqualTo("jun");
+        List<Car> carList = cars.getCars();
+        assertThat(carList).hasSize(3);
+        assertThat(carList.get(0).getName()).isEqualTo("pobi");
+        assertThat(carList.get(1).getName()).isEqualTo("woni");
+        assertThat(carList.get(2).getName()).isEqualTo("jun");
     }
 
     // --- 예외 처리 테스트 ---

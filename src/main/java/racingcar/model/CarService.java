@@ -5,7 +5,7 @@ import java.util.List;
 
 public class CarService {
     // 스트림 API로 추후 리팩터링 고려하기
-    public List<Car> createCar(String inputCarNames){
+    public Cars createCar(String inputCarNames){
         if(inputCarNames.contains(" ")){
             throw new IllegalArgumentException("이름에 공백은 포함할 수 없습니다.");
         }
@@ -22,6 +22,6 @@ public class CarService {
         for(int i=0; i<carArray.length; i++){
             carList.add(new Car(carArray[i]));
         }
-        return carList;
+        return new Cars(carList);
     }
 }

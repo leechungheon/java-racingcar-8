@@ -1,8 +1,7 @@
 package racingcar.controller;
 
-import java.util.List;
-import racingcar.model.Car;
 import racingcar.model.CarService;
+import racingcar.model.Cars;
 import racingcar.view.InputView;
 import racingcar.view.OutputView;
 
@@ -18,7 +17,7 @@ public class Application {
 
     public void run(){
         outputView.requestCarNames();
-        List<Car> carList = carService.createCar(inputView.readCarNames());
+        Cars cars = carService.createCar(inputView.readCarNames());
         outputView.requestTryNumber();
         inputView.readTryNumber();
     }
