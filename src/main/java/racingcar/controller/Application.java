@@ -19,7 +19,8 @@ public class Application {
         outputView.requestCarNames();
         Cars cars = carService.createCar(inputView.readCarNames());
         outputView.requestTryNumber();
-        inputView.readTryNumber();
+        int tryCount = inputView.readTryCount();
+        //최종 결과 출력
     }
 
     public static void main(String[] args) {
