@@ -9,7 +9,7 @@ public class RacingService {
         cars.getCars().forEach(this::move);
     }
 
-    public void move(Car car){
+    private void move(Car car){
         if(Randoms.pickNumberInRange(0, 9) >= MINIMUM_MOVE_CRITERIA){
             car.increaseDistance();
         }
