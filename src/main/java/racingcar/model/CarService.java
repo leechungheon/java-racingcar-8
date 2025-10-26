@@ -6,10 +6,11 @@ import java.util.stream.Collectors;
 
 public class CarService {
     private static final int MINIMUM_CAR_COUNT = 2;
+    private static final String DELIMITER = ",";
 
     public Cars createCar(String inputCarNames){
         validateNoBlankInCarNames(inputCarNames);
-        String[] carArray = inputCarNames.split(",",-1);
+        String[] carArray = inputCarNames.split(DELIMITER,-1);
         validateDelimiterPosition(carArray);
         validateMinimumCarCount(carArray);
 

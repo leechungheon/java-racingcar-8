@@ -6,9 +6,7 @@ public class RacingService {
     private static final int MINIMUM_MOVE_CRITERIA = 4;
 
     public void runOneTurn(Cars cars){
-        for(int i=0; i< cars.getTotalCarsNumber(); i++) {
-            move(cars.getCars().get(i));
-        }
+        cars.getCars().forEach(this::move);
     }
 
     public void move(Car car){
