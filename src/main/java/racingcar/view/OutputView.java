@@ -13,15 +13,18 @@ public class OutputView {
     public void requestTryNumber() {
         System.out.println("시도할 횟수는 몇 회인가요?");
     }
+
     public void printExecutionMessage(){
         System.out.println("\n실행 결과");
     }
+
     public void printOneTurn(Cars cars){
         for(int i=0; i<cars.getCars().size(); i++){
             System.out.println(cars.getCars().get(i).getName() + " : " + "-".repeat(cars.getCars().get(i).getDistance()));
         }
         System.out.println();
     }
+
     public void printWinnerMessage(List<Car> winners){
         String winnerNames = winners.stream()
                 .map(Car::getName)

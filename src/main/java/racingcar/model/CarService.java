@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 public class CarService {
     private static final int MINIMUM_CAR_COUNT = 2;
+
     public Cars createCar(String inputCarNames){
         validateNoBlankInCarNames(inputCarNames);
         String[] carArray = inputCarNames.split(",",-1);
