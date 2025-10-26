@@ -19,12 +19,19 @@ public class Application {
     }
 
     public void run(){
+        // 입력
         outputView.requestCarNames();
         Cars cars = carService.createCar(inputView.readCarNames());
         outputView.requestTryNumber();
         int tryCount = inputView.readTryCount();
-        //최종 결과 출력
-        racingService.startRacing(cars,tryCount);
+        // 최종 결과 출력
+        outputView.printExecutionMessage();
+        while(tryCount!=0){
+            racingService.runOneTurn(cars);
+            outputView.printOneTurn(cars);
+            tryCount--;
+        }
+        outputView.printWinnerMessage(cars.getMaximumDistanceCars());
     }
 
     public static void main(String[] args) {
