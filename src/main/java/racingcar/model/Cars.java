@@ -17,10 +17,6 @@ public class Cars {
         return this.cars;
     }
 
-    public int getTotalCarsNumber(){
-        return cars.size();
-    }
-
     public List<Car> getMaximumDistanceCars(){
         if (this.cars.isEmpty()) {
             return new ArrayList<>();

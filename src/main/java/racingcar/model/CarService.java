@@ -10,7 +10,9 @@ public class CarService {
 
     public Cars createCar(String inputCarNames){
         validateNoBlankInCarNames(inputCarNames);
+
         String[] carArray = inputCarNames.split(DELIMITER,-1);
+
         validateDelimiterPosition(carArray);
         validateMinimumCarCount(carArray);
 
@@ -38,7 +40,7 @@ public class CarService {
 
     private void validateMinimumCarCount(String[] carArray){
         if(carArray.length < MINIMUM_CAR_COUNT){
-            throw new IllegalArgumentException("자동차는 2대 이상 입력해야 합니다.");
+            throw new IllegalArgumentException("자동차는 " + MINIMUM_CAR_COUNT + "대 이상 입력해야 합니다.");
         }
     }
 }
