@@ -24,6 +24,15 @@ public class Application {
         Cars cars = carService.createCar(inputView.readCarNames());
         outputView.requestTryNumber();
         int tryCount = inputView.readTryCount();
+
+        // 실행
+        startRacing(cars,tryCount);
+
+        // 결과
+        outputView.printWinnerMessage(cars.getMaximumDistanceCars());
+    }
+
+    private void startRacing(Cars cars, int tryCount){
         // 최종 결과 출력
         outputView.printExecutionMessage();
         while(tryCount!=0){
@@ -31,7 +40,6 @@ public class Application {
             outputView.printOneTurn(cars);
             tryCount--;
         }
-        outputView.printWinnerMessage(cars.getMaximumDistanceCars());
     }
 
     public static void main(String[] args) {
