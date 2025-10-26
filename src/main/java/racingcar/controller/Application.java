@@ -1,5 +1,6 @@
 package racingcar.controller;
 
+import racingcar.config.AppConfig;
 import racingcar.model.CarService;
 import racingcar.model.Cars;
 import racingcar.model.RacingService;
@@ -28,7 +29,7 @@ public class Application {
         // 실행
         startRacing(cars,tryCount);
 
-        // 결과
+        // 출력
         outputView.printWinnerMessage(cars.getMaximumDistanceCars());
     }
 
@@ -43,12 +44,8 @@ public class Application {
     }
 
     public static void main(String[] args) {
-        OutputView outputView = new OutputView();
-        InputView inputView = new InputView();
-        CarService carService = new CarService();
-        RacingService racingService = new RacingService();
-
-        Application app = new Application(outputView, inputView, carService, racingService);
+        AppConfig config = new AppConfig();
+        Application app = config.application();
         app.run();
     }
 }
