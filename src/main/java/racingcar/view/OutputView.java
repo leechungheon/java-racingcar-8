@@ -19,9 +19,9 @@ public class OutputView {
     }
 
     public void printOneTurn(Cars cars){
-        for(int i=0; i<cars.getCars().size(); i++){
-            System.out.println(cars.getCars().get(i).getName() + " : " + "-".repeat(cars.getCars().get(i).getDistance()));
-        }
+        cars.getCars().forEach(car->
+            System.out.println(car.getName() + " : " + "-".repeat(car.getDistance()))
+        );
         System.out.println();
     }
 
