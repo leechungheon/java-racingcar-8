@@ -1,6 +1,6 @@
 package racingcar.config;
 
-import racingcar.controller.Application;
+import racingcar.Application;
 import racingcar.model.CarService;
 import racingcar.model.RacingService;
 import racingcar.view.InputView;

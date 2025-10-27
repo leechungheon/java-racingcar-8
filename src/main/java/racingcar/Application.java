@@ -1,4 +1,4 @@
-package racingcar.controller;
+package racingcar;
 
 import racingcar.config.AppConfig;
 import racingcar.model.CarService;
