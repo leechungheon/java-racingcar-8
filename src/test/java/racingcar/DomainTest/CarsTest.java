@@ -1,4 +1,4 @@
-package racingcar; // CarService가 model 패키지에 있다고 가정
+package racingcar.DomainTest; // CarService가 model 패키지에 있다고 가정
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
